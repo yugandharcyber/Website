@@ -1,27 +1,13 @@
-import os
-from textwrap import wrap
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import MinMaxScaler
-import tensorflow as tf
 import pickle
 import data_creation_v3 as d
-from nltk.corpus import stopwords
 from tensorflow.keras.models import load_model
-import tensorflow as tf
-from sklearn.feature_extraction.text import CountVectorizer
-import nltk
 import streamlit as st
 import time
-from PIL import Image
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
-import sys
-if sys.version_info[0] < 3: 
-    from StringIO import StringIO
-else:
-    from io import StringIO
 
 order = ['bodyLength', 'bscr', 'dse', 'dsr', 'entropy', 'hasHttp', 'hasHttps',
        'has_ip', 'numDigits', 'numImages', 'numLinks', 'numParams',
