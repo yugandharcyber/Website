@@ -3,9 +3,9 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 import pickle
 import data_creation_v3 as d
-from tensorflow.keras.models import load_model
+from keras.models import load_model
+import h5py
 import streamlit as st
-import time
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
 
@@ -116,6 +116,7 @@ if __name__ == '__main__':
 
 	a = st.text_input("Enter XSS::")
 	model = load_model("yes.h5")
+
 	if (a == ""):
 		st.write("Enter Valid URL:")
 	s1 = st.button('Predict XSS:')
