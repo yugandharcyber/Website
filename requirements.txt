@@ -1,10 +1,8 @@
-opencv-python
+pandas
 numpy
-streamlit
 sklearn
-pillow
+pickle
 tensorflow
-PIL
-skimage
-imutils
-mediapipe
+streamlit
+time
+matplotlib
