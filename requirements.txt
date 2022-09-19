@@ -4,3 +4,5 @@ scikit-learn
 pickle-mixin
 keras
 streamlit
+whois
+pyquery
