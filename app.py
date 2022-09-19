@@ -4,7 +4,6 @@ from sklearn.preprocessing import LabelEncoder
 import pickle
 import data_creation_v3 as d
 from keras.models import load_model
-import h5py
 import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
