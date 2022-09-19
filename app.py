@@ -44,28 +44,6 @@ def convert_to_ascii(sentence):
     zer.shape=(100, 100)
     return zer
 
-class TimerError(Exception):
-     """A custom exception used to report errors in use of Timer class"""
- 
-class Timer:
-    def __init__(self):
-        self._start_time = None
-
-    def start(self):
-        """Start a new timer"""
-        if self._start_time is not None:
-            raise TimerError(f"Timer is running. Use .stop() to stop it")
-
-        self._start_time = time.perf_counter()
-
-    def stop(self):
-        """Stop the timer, and report the elapsed time"""
-        if self._start_time is None:
-            raise TimerError(f"Timer is not running. Use .start() to start it")
-
-        elapsed_time = time.perf_counter() - self._start_time
-        self._start_time = None
-        return (f"Elapsed time: {elapsed_time:0.4f} seconds")
 
 if __name__ == '__main__':
 	st.title("BrowseEnsure: harmful URL and XSS detection system")
@@ -90,12 +68,7 @@ if __name__ == '__main__':
 	scaler = pickle.load(open(scalerfile, 'rb'))
 	model = load_model("Model_v2.h5")#, custom_objects={'f1_m':f1_m,"precision_m":precision_m, "recall_m":recall_m})
 	test = pd.DataFrame(test).replace(True,1).replace(False,0).to_numpy().reshape(1,-1)
-	t = Timer()
-	t.start()
 	predicted = np.argmax(model.predict(scaler.transform(test)),axis=1)
-	s = t.stop()
-	st.sidebar.text("Prediction :")
-	st.sidebar.text(str(s))
 
 	ben = [1.        , 1.        , 1.        , 1.        , 0.56158211,
        0.        , 1.        , 0.        , 0.58866722, 1.        ,
