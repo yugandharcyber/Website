@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 import pickle
 import data_creation_v3 as d
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
