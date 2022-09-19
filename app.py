@@ -5,7 +5,6 @@ import pickle
 import data_creation_v3 as d
 from tensorflow.keras.models import load_model
 import streamlit as st
-import time
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
 
